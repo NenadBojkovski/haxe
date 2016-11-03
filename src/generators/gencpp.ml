@@ -103,7 +103,7 @@ class source_writer common_ctx write_header_func write_func close_func =
    method end_block_line = this#pop_indent; this#write_i "}"; just_finished_block <- true
    method terminate_line = this#write (if just_finished_block then "" else ";\n")
    method add_big_closures = if not has_big_closures then begin
-     this#write_h "#include <hx/MacrosJumbo.h>";
+     this#write_h "#include <hx/MacrosJumbo.h>\n";
      has_big_closures <- true
    end
 
